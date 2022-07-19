@@ -117,6 +117,29 @@
 - 타입스크립트는 strongly-typed(프로그래밍 언어가 작동하기 전에 type을 확인하는) 언어다.
 - const plus = (a:number. b:number) => a + b;
 - npx create-react-app my-app --template typescript
+- 자바스크립트로 만들어진 라이브러리를 사용할 때, 충돌이 발생할 수 있다. ex) styled-components
+  - npm i --save-dev @types/styled-components
+- 우리가 TypeScript를 사용하는 이유는 코드가 실행되기 전에 오류를 확인할 수 있기 때문이다.
+- **interface** : object shape(객체모양)을 TypeScript에 설명해주는 타입스크립트의 개념
+
+  ```javaScript
+  interface CircleProps {
+    bgColor: string;
+  }
+
+  function Circle({bgColor}:CircleProps) {
+    return <Container />;
+  }
+  ```
+
+- **optional props** : 필수가 아닌 선택적 props로 설정하려면 ? 만 작성해주면 된다.
+  ```javaScript
+  interface CircleProps {
+    bgColor: string;
+    borderColor?: string;
+  }
+  ```
+- borderColor={borderColor ?? 'yellow'}의 형태로 undefined 일 때 사용될 기본값을 지정할 수 있다.
 
 </div>
 </details>
