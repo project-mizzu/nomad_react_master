@@ -109,6 +109,19 @@
 </details>
 
 <details>
+<summary>0719</summary>
+<div markdown="1">
+
+[**TypeScript**]
+
+- 타입스크립트는 strongly-typed(프로그래밍 언어가 작동하기 전에 type을 확인하는) 언어다.
+- const plus = (a:number. b:number) => a + b;
+- npx create-react-app my-app --template typescript
+
+</div>
+</details>
+
+<details>
 <summary>07??</summary>
 <div markdown="1">
 
