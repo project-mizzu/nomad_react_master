@@ -145,6 +145,36 @@
 </details>
 
 <details>
+<summary>0727</summary>
+<div markdown="1">
+
+[**TypeScript**]
+
+- state의 default value를 통해 타입스크립트는 자동 타입 추론을 한다.
+- const [value, setValue] = useState\<number|string>(0) 으로 작성하면 여러 타입 적용가능
+- 하지만 보통 state를 만들면 한가지 타입이 유지되기 때문에, 잘 사용할 일은 없다.
+
+  ```javaScript
+  const onChange = (event: React.FormEvent<HTMLInputElement>) => {
+      const {
+        currentTarget: { value },
+      } = event;
+      setValue(value);
+    };
+    const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      console.log('hello', value);
+    };
+  ```
+
+- React에서 event의 타입은 event: React.FormEvent\<HTMLFormElement> 로 작성
+
+- **styled.d.ts** : styled components의 테마 정의 확장
+
+</div>
+</details>
+
+<details>
 <summary>07??</summary>
 <div markdown="1">
 
