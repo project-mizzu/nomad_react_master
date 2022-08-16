@@ -207,6 +207,22 @@
 
 - useRouteMatch는 특정한 URL에 존재하고 있는지 여부를 알려준다.
 
+<br>
+
+[**React Query**]
+
+- queryClientProvider 안에 있는 모든 것은 queryClient에 접근할 수 있다.
+- 최초 설정 시 client를 필요로 한다.
+
+  ```javaScript
+  const queryClient = new QueryClient();
+  <QueryClientProvider client={queryClient}>
+  ```
+
+- useQuery는 2가지 argument를 필요로 한다. (고유queryKey, fetcher함수)
+- react query가 데이터를 캐시에 저장해두기 때문에, 데이터를 기억하고 있다.
+- ReactQueryDevtools를 통해 react query에서 지원하는 개발자 도구에 접근할 수 있다.
+
 </div>
 </details>
 
