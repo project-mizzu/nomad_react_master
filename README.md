@@ -175,7 +175,43 @@
 </details>
 
 <details>
-<summary>07??</summary>
+<summary>0816</summary>
+<div markdown="1">
+
+- GlobalStyle을 통해 전역 스타일 설정을 할 수 있다.
+- import { createGlobalStyle } from 'styled-components';
+- Fragment(유령 컴포넌트) <></>
+- {&rarr + ;} 오른쪽 화살표
+- (async => {...})(); 형태로 사용하면 함수 즉시실행
+- arr.slice()를 통해 원하는 만큼만 자를 수 있다.
+
+  ```javaScript
+  <Link
+    to={{
+      pathname: `/${coin.id}`,
+      state: { name: coin.name },
+    }}
+  >
+  ```
+
+- Link에 state를 작성하여, 다른 화면으로 전환할 때 해당 데이터를 같이 넘길 수 있다.
+- useLocation()을 통해 react router DOM이 보내주는 location object에 접근할 수 있다.
+- 이미 코인의 name을 가지고 있기 때문에, API가 줄 때까지 기다릴 필요가 없다.
+
+[**Nested Router**]
+
+- route안에 있는 또 다른 route를 의미한다.
+- 웹사이트에서 탭을 사용할 때 등 유용하게 활용할 수 있다.
+
+<br>
+
+- useRouteMatch는 특정한 URL에 존재하고 있는지 여부를 알려준다.
+
+</div>
+</details>
+
+<details>
+<summary>08??</summary>
 <div markdown="1">
 
 </div>
