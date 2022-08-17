@@ -17,12 +17,16 @@ interface ChartProps {
   coinId: string;
 }
 
+// [코드 챌린지]
+// chart / line chart를 candle chart로 바꾸기
+
 function Chart({ coinId }: ChartProps) {
   const { isLoading, data } = useQuery<IHistorical[]>(
     ['ohlcv', coinId],
     () => fetchCoinHistory(coinId),
     { refetchInterval: 10000 }
   );
+  let validData = data ?? [];
   return (
     <div>
       {isLoading ? (
@@ -62,9 +66,8 @@ function Chart({ coinId }: ChartProps) {
               axisBorder: { show: false },
               axisTicks: { show: false },
               labels: { show: false },
-              categories: data?.map(
-                (price) => new Date(price.time_close * 1000)
-              ),
+              type: 'datetime',
+              categories: validData.map((price) => price.time_close * 1000),
             },
             fill: {
               type: 'gradient',

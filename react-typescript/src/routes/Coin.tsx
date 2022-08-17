@@ -13,6 +13,15 @@ import { useQuery } from 'react-query';
 import { fetchCoinInfo, fetchCoinTickers } from './api';
 import Helmet from 'react-helmet';
 
+const BackArrow = styled.div`
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  a {
+    cursor: pointer;
+  }
+`;
+
 const Container = styled.div`
   padding: 0 20px;
   max-width: 480px;
@@ -24,7 +33,7 @@ const Header = styled.header`
   justify-content: center;
   align-items: center;
   height: 10vh;
-  margin: 20px 0;
+  margin: 0 0 30px 0;
 `;
 
 const Title = styled.h1`
@@ -109,7 +118,7 @@ interface InfoData {
   last_data_at: string;
 }
 
-interface PriceData {
+export interface PriceData {
   id: string;
   name: string;
   symbol: string;
@@ -159,11 +168,10 @@ function Coin() {
   );
   const loading = infoLoading || tickersLoading;
   return (
-    // [코드 챌린지]
-    // coin => coins 뒤로가기 버튼 만들기
-    // price 가격정보 보여주기
-    // chart / line chart를 candle chart로 바꾸기
     <Container>
+      <BackArrow>
+        <Link to={'/'}>{`<`}</Link>
+      </BackArrow>
       <Helmet>
         <title>
           {state?.name ? state.name : loading ? 'Loading...' : infoData?.name}
@@ -214,11 +222,11 @@ function Coin() {
           </Tabs>
 
           <Switch>
-            <Route path={'/:coinId/price'}>
-              <Price />
-            </Route>
             <Route path={'/:coinId/chart'}>
               <Chart coinId={coinId} />
+            </Route>
+            <Route path={'/:coinId/price'}>
+              <Price coinId={coinId} />
             </Route>
           </Switch>
         </>
