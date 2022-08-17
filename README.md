@@ -227,6 +227,19 @@
 </details>
 
 <details>
+<summary>0817</summary>
+<div markdown="1">
+
+- ApexChart
+- toFixed(n) : 소숫점 n번째까지 반환
+- useQuery hook의 3번째 argument 사용하기(선택)
+- useQuery에서 refetchInterval를 통해 주기적으로 백그라운드에서 앱을 업데이트 할 수 있다.
+- react-helmet : head title, favicon 등을 각 컴포넌트에서 수정 가능 (=direct link)
+
+</div>
+</details>
+
+<details>
 <summary>08??</summary>
 <div markdown="1">
 
