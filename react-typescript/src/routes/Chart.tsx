@@ -17,9 +17,6 @@ interface ChartProps {
   coinId: string;
 }
 
-// [코드 챌린지]
-// chart / line chart를 candle chart로 바꾸기
-
 function Chart({ coinId }: ChartProps) {
   const { isLoading, data } = useQuery<IHistorical[]>(
     ['ohlcv', coinId],
@@ -33,11 +30,14 @@ function Chart({ coinId }: ChartProps) {
         'Loading chart...'
       ) : (
         <ApexChart
-          type="line"
+          type="candlestick"
           series={[
             {
-              name: 'price',
-              data: data?.map((price) => parseFloat(price.close)) ?? [],
+              name: '시세',
+              data: validData.map((price) => ({
+                x: price.time_close * 1000,
+                y: [price.open, price.high, price.low, price.close],
+              })),
             },
           ]}
           options={{
@@ -45,7 +45,6 @@ function Chart({ coinId }: ChartProps) {
               mode: 'dark',
             },
             chart: {
-              height: 300,
               width: 500,
               toolbar: {
                 show: false,
@@ -56,24 +55,27 @@ function Chart({ coinId }: ChartProps) {
               show: false,
             },
             stroke: {
-              curve: 'smooth',
-              width: 4,
+              width: 2,
             },
             yaxis: {
               show: false,
             },
             xaxis: {
-              axisBorder: { show: false },
-              axisTicks: { show: false },
-              labels: { show: false },
+              labels: {
+                show: false,
+              },
               type: 'datetime',
               categories: validData.map((price) => price.time_close * 1000),
+              axisTicks: {
+                show: false,
+              },
+              axisBorder: {
+                show: false,
+              },
+              tooltip: {
+                enabled: false,
+              },
             },
-            fill: {
-              type: 'gradient',
-              gradient: { gradientToColors: ['#0be881'], stops: [0, 100] },
-            },
-            colors: ['#0fbcf9'],
             tooltip: {
               y: {
                 formatter: (value) => `$${value.toFixed(2)}`,
