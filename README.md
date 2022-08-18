@@ -240,6 +240,19 @@
 </details>
 
 <details>
+<summary>0818</summary>
+<div markdown="1">
+
+[**state management**]
+
+- global state : 어플리케이션 전체에서 공유되는 state(어플리케이션이 무언가를 인지해야 할 때 사용)
+- recoil : 페이스북에서 만든 상태관리 라이브러리
+- useRecoilValue(), useSetRecoilState()
+
+</div>
+</details>
+
+<details>
 <summary>08??</summary>
 <div markdown="1">
 
