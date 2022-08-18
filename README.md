@@ -249,6 +249,25 @@
 - recoil : 페이스북에서 만든 상태관리 라이브러리
 - useRecoilValue(), useSetRecoilState()
 
+[**react-hook form**]
+
+- useForm()에는 register, watch, handleSubmit, formState 등의 함수가 있다.
+- register()는 호출 시 name, onChange, onBlur, ref를 보여준다.
+- watch()는 입력값을 추적할 수 있다.
+- handleSubmit()은 2개의 인자를 필요로 하며, 하나는 데이터가 유효할 때 호출되는 함수(필수), 나머지는 데이터가 유효하지 않을 때 호출되는 함수(선택)이다.
+- formState는 에러가 있는 항목(error type을 알려줌)을 객체로 반환해준다.
+- react-hook form은 회원가입 form 처럼 많은 양의 input을 다뤄야 할 때 유용하다.
+- 각각의 input마다 따로 state를 만들어줄 필요가 없다.
+- required: true 설정을 통해 빈 input에 대한 검증과 자동 포커싱이 가능하다.
+- minLength: number, maxLength: number 설정을 통해 value 길이 지정이 가능하다.
+
+  ```javaScript
+  <input
+    {...register('Username', { required: true, minLength: 10 })}
+    placeholder="Username"
+  />
+  ```
+
 </div>
 </details>
 
