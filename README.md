@@ -316,6 +316,16 @@
 <summary>0831</summary>
 <div markdown="1">
 
+- toDo의 필수요소들을 toDo.text, toDo.id 등이 아닌 {...toDo}의 형태로 한 번에 넘겨줄 수 있다.
+
+  ```javaScript
+  <ul>{toDos.map((toDo) => <ToDo {...toDo} />).reverse()}</ul>
+  ```
+
+[**Recoil selector**]
+
+- selector : derived state를 나타냄 / state를 입력 받아서 해당값을 변형해 반환하는 순수함수를 거쳐 반환된 값
+
 </div>
 </details>
 
