@@ -255,7 +255,7 @@
 - register()는 호출 시 name, onChange, onBlur, ref를 보여준다.
 - watch()는 입력값을 추적할 수 있다.
 - handleSubmit()은 2개의 인자를 필요로 하며, 하나는 데이터가 유효할 때 호출되는 함수(필수), 나머지는 데이터가 유효하지 않을 때 호출되는 함수(선택)이다.
-- formState는 에러가 있는 항목(error type을 알려줌)을 객체로 반환해준다.
+- formState.errors는 에러가 있는 항목(error type을 알려줌)을 객체로 반환해준다.
 - react-hook form은 회원가입 form 처럼 많은 양의 input을 다뤄야 할 때 유용하다.
 - 각각의 input마다 따로 state를 만들어줄 필요가 없다.
 - required: true 설정을 통해 빈 input에 대한 검증과 자동 포커싱이 가능하다.
@@ -272,7 +272,55 @@
 </details>
 
 <details>
-<summary>08??</summary>
+<summary>0829</summary>
+<div markdown="1">
+
+[**정규식 RegExp**]
+
+- /^[A-Za-z0-9._%+-]+@naver.com$
+- react-hook form에서 pattern을 넘기면 해당 정규식 조건대로 필터링 할 수 있다.
+- useForm 내에 defaultValues를 적용할 수 있다.
+
+  ```javaScript
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IForm>({
+    defaultValues: {
+      email: '@naver.com',
+    },
+  });
+  ```
+
+- setError를 사용해 Error 조건, 대상, 메시지를 적용할 수 있다.
+- shouldFocus: true 설정으로 에러 대상에 대한 자동 포커스 설정이 가능하다.
+
+  ```javaScript
+  const onValid = (data: IForm) => {
+    if (data.password !== data.password1) {
+      setError(
+        'password1',
+        { message: 'Password are not the same' },
+        { shouldFocus: true }
+      );
+    }
+    setError('extraError', { message: 'Server offline.' });
+  };
+  ```
+
+</div>
+</details>
+
+<details>
+<summary>0831</summary>
+<div markdown="1">
+
+</div>
+</details>
+
+<details>
+<summary>09??</summary>
 <div markdown="1">
 
 </div>
