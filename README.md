@@ -339,6 +339,18 @@
 </details>
 
 <details>
+<summary>0902</summary>
+<div markdown="1">
+
+[**Recoil enumerable**]
+
+- enum(열거형) : 계속해서 써야하는 값을 저장할 수 있는 도구.
+- 일련의 문자를 숫자로 표현해 주기도 한다.
+
+</div>
+</details>
+
+<details>
 <summary>09??</summary>
 <div markdown="1">
 
