@@ -322,9 +322,18 @@
   <ul>{toDos.map((toDo) => <ToDo {...toDo} />).reverse()}</ul>
   ```
 
+</div>
+</details>
+
+<details>
+<summary>0901</summary>
+<div markdown="1">
+
 [**Recoil selector**]
 
 - selector : derived state를 나타냄 / state를 입력 받아서 해당값을 변형해 반환하는 순수함수를 거쳐 반환된 값
+- get function을 통해 atom을 받을 수 있다.
+- atom에 데이터를 모아두고, selector로 데이터를 변형할 수 있다.
 
 </div>
 </details>
